@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How ACMX Works — Verra Global</title>
+<meta name="description" content="ACMX skill pipeline, persistent deal state, trade intelligence and human approval gates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=5">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="shell nav-inner">
+    <a class="brand" href="index.html" aria-label="Verra Global home">verra<span class="brand-dot"></span><small>ACMX<br>TRANSACTION DESK</small></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">MENU</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="platform.html" aria-current="page">How ACMX works</a>
+      <a href="protocol.html">Execution protocol</a>
+      <a href="commodities.html">Commodities</a>
+      <a href="compare.html">Landscape</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="cta" href="contact.html">Submit a requirement <span>→</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero shell">
+    <p class="eyebrow signal">How ACMX works</p>
+    <h1>A managed transaction operating system.</h1>
+    <p>ACMX turns a buyer or seller mandate into a structured, evidence-backed deal process. It normalizes the requirement, discovers counterparties, verifies companies and material, assesses compliance, supports negotiation, assembles an Executable Offer, and coordinates inspection, finance and logistics. Every decision is kept in one persistent deal state.</p>
+  </section>
+
+  <section class="dark-section" id="skills">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">The skill pipeline</p>
+          <h2>Seven skills. One record.</h2>
+        </div>
+        <p>The skills are model-agnostic and reusable. Each one has a defined role, reads the shared deal state and returns structured information for the next stage.</p>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="num">DD1</span><div><h3>First-pass diligence</h3><span class="meta">Output: findings · evidence gaps · next requests</span></div><p>A rapid screen of an opportunity and its evidence. It classifies each fact as verified, claimed, missing or conflicting, then drafts a market-side enquiry and a source-side request for the missing evidence.</p></div>
+        <div class="row"><span class="num">DD2</span><div><h3>Deeper diligence</h3><span class="meta">Output: second-stage diligence record</span></div><p>Further verification of counterparty, material and authority when a transaction warrants it before it moves to matching.</p></div>
+        <div class="row"><span class="num">03</span><div><h3>MATCH</h3><span class="meta">Output: ranked candidates · unresolved gaps</span></div><p>Compares a mandate with qualified counterparties and available supply or demand, using hard filters for specification, geography and compliance.</p></div>
+        <div class="row"><span class="num">04</span><div><h3>OFFER</h3><span class="meta">Output: Executable Offer</span></div><p>Combines validated components into an option ready for a decision: material, seller, specification, commercial terms, compliance, inspection, logistics, payment and timing.</p></div>
+        <div class="row"><span class="num">05</span><div><h3>NEGOTIATE</h3><span class="meta">Output: drafts · counteroffers · escalations</span></div><p>Handles questions and counteroffers inside approved commercial limits. Each change creates a new offer version, and anything outside the limits goes to a human.</p></div>
+        <div class="row"><span class="num">06</span><div><h3>LOGISTICS</h3><span class="meta">Output: movement plan · tracking status</span></div><p>Compares freight, insurance and delivery options against origin, destination, packaging, Incoterm and timing, then tracks execution.</p></div>
+        <div class="row"><span class="num">07</span><div><h3>EXECUTE</h3><span class="meta">Output: closing status · audit trail</span></div><p>Coordinates gated closing: documentation, compliance, settlement readiness, inspection and release. It runs under the <a href="protocol.html" style="text-decoration:underline">execution protocol</a>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-section" id="agents">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">Specialist agents</p>
+          <h2>Each role has a clear job.</h2>
+        </div>
+        <p>Supporting agents feed the pipeline. None of them can commit a transaction on their own.</p>
+      </div>
+      <div class="grid four">
+        <article><h3>Demand intake</h3><p>Turns RFQs, emails, chats, PDFs and spreadsheets into a structured mandate.</p></article>
+        <article><h3>Supplier discovery</h3><p>Finds potential supply against the mandate and its specification.</p></article>
+        <article><h3>Trade intelligence</h3><p>Identifies companies with evidence of real shipping or buying activity.</p></article>
+        <article><h3>Counterparty verification</h3><p>Checks identity, authority, history and risk flags.</p></article>
+        <article><h3>Material verification</h3><p>Links COAs, assays, lots, title and inspection to the offered material.</p></article>
+        <article><h3>Compliance</h3><p>Builds the checklist: KYC/KYB, AML, sanctions, end use, licences.</p></article>
+        <article><h3>Pricing</h3><p>Normalizes quotes and compares economics. It never authorizes a final price.</p></article>
+        <article><h3>Documentation</h3><p>Drafts RFQs, LOIs, POs and contract documents from the approved state.</p></article>
+        <article><h3>Finance</h3><p>Proposes payment and settlement structures suited to the risk.</p></article>
+        <article><h3>Logistics</h3><p>Freight, insurance, documentation and shipment status.</p></article>
+        <article><h3>Negotiation</h3><p>Drafts replies and counters inside approved limits.</p></article>
+        <article><h3>Human transaction manager</h3><p>Owns exceptions and every critical decision. This is the approval authority.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section" id="state">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">Persistent deal state</p>
+          <h2>Nothing is silently overwritten.</h2>
+        </div>
+        <p>Quotes are kept as versioned snapshots. Evidence, contradictions and expiry dates stay visible for the whole life of the deal.</p>
+      </div>
+      <div class="grid">
+        <article><span class="eyebrow">Requirement</span><ul><li>Buy / sell side</li><li>Commodity &amp; specification</li><li>Grade, tolerances, quantity</li><li>Origin rules &amp; destination</li><li>Delivery basis &amp; timing</li><li>Commercial boundaries</li></ul></article>
+        <article><span class="eyebrow">Counterparties</span><ul><li>Legal entity &amp; role</li><li>Principal / representation status</li><li>Authority evidence</li><li>KYC / KYB status</li><li>Sanctions &amp; compliance</li><li>Risk flags</li></ul></article>
+        <article><span class="eyebrow">Offers</span><ul><li>Version history</li><li>Specification &amp; quantity</li><li>Commercial &amp; delivery basis</li><li>Payment structure</li><li>Inspection terms</li><li>Validity &amp; status</li></ul></article>
+        <article><span class="eyebrow">Evidence</span><ul><li>Maturity level</li><li>Verification source &amp; date</li><li>Contradictions</li><li>Missing documents</li><li>Unresolved questions</li></ul></article>
+        <article><span class="eyebrow">Execution</span><ul><li>Compliance clearance</li><li>Inspection &amp; material status</li><li>Settlement readiness</li><li>Logistics &amp; documents</li></ul></article>
+        <article><span class="eyebrow">Governance</span><ul><li>Human approvals &amp; rejections</li><li>Agent runs &amp; escalations</li><li>Communications log</li><li>Tasks &amp; next action</li><li>Audit history</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="approval">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">Approval gates</p>
+          <h2>Three levels of authority.</h2>
+        </div>
+        <p>Automation handles the routine work, and the workflow stops at any point where a commitment is made.</p>
+      </div>
+      <div class="grid">
+        <article><span class="eyebrow">Automated</span><h3>Routine work</h3><p>Research, extraction, normalization, qualification, routine document requests, standard follow-ups, comparisons, scoring and negotiation inside expressly approved limits.</p></article>
+        <article><span class="eyebrow">Approval</span><h3>Commercial changes</h3><p>Final pricing changes, material changes to payment terms, exclusivity, major specification deviations, unusual terms and protected counterparty disclosure.</p></article>
+        <article><span class="eyebrow signal">Human only</span><h3>Binding decisions</h3><p>Contract acceptance, bank and payment instructions, letter-of-credit acceptance, material legal commitments, high-risk compliance exceptions and final release.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-section" id="discovery">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">Counterparty discovery</p>
+          <h2>Find the companies that actually trade.</h2>
+        </div>
+        <p>Trade intelligence takes discovery beyond directory searches to companies with evidence of real commodity activity.</p>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="num">01</span><h3>Normalize the requirement</h3><p>Product names and synonyms, HS classification where appropriate, corridors, quantity and time window.</p></div>
+        <div class="row"><span class="num">02</span><h3>Search trade intelligence</h3><p>Identify the producers, suppliers, traders and buyers that have shipped or received the product.</p></div>
+        <div class="row"><span class="num">03</span><h3>Validate &amp; enrich</h3><p>Remove duplicate company identities, confirm operating relevance, and add professional contact data and available evidence.</p></div>
+        <div class="row"><span class="num">04</span><h3>Rank</h3><p>By product fit, relevant history, geography, producer or end-user status, evidence and contactability.</p></div>
+        <div class="row"><span class="num">05</span><h3>Controlled outreach</h3><p>Business email, WhatsApp and LinkedIn, with duplicate suppression, do-not-contact controls and pacing.</p></div>
+        <div class="row"><span class="num">06</span><h3>Log, interpret, return</h3><p>Every action and reply is attached to the transaction. Responses update the deal state and trigger verification, matching or negotiation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-section" id="security">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow signal">Security &amp; governance</p>
+          <h2>Built for controlled disclosure.</h2>
+        </div>
+        <p>ACMX is designed around the principles below. No certification or regulated status is implied by the platform design.</p>
+      </div>
+      <div class="grid">
+        <article><h3>Private by default</h3><p>Transaction data is access-controlled, and public and private counterparty information are kept apart.</p></article>
+        <article><h3>Auditable</h3><p>Documents and offers are versioned, with a full history of agent runs, approvals and communications.</p></article>
+        <article><h3>Compliance-led</h3><p>KYC/KYB, AML and sanctions workflows, with human review of every exception.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact shell">
+    <p class="eyebrow signal">Next</p>
+    <div class="contact-inner">
+      <h2>See how a deal closes.</h2>
+      <div>
+        <p>The seven-stage execution protocol makes sure no required step is skipped just to move faster.</p>
+        <a class="cta" href="protocol.html">Execution protocol <span>→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="shell">
+  <div class="footer">
+    <div><strong>VERRA GLOBAL F.Z.E</strong><br>Ajman Free Zone, United Arab Emirates<br><a href="mailto:info@verraglobal.co">info@verraglobal.co</a></div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="platform.html">How ACMX works</a><a href="protocol.html">Execution protocol</a><a href="commodities.html">Commodities</a><a href="compare.html">Landscape</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements.</p>
+</footer>
+<script src="assets/site.js?v=5"></script>
+</body>
+</html>

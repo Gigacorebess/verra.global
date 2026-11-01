@@ -1,0 +1,6 @@
+# Private source material, never publish
+*.zip
+*.pdf
+
+# Local tooling
+.claude/

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit a Requirement — Verra Global</title>
+<meta name="description" content="Submit a buy-side or sell-side commodity requirement to the ACMX transaction desk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=5">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="shell nav-inner">
+    <a class="brand" href="index.html" aria-label="Verra Global home">verra<span class="brand-dot"></span><small>ACMX<br>TRANSACTION DESK</small></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">MENU</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="platform.html">How ACMX works</a>
+      <a href="protocol.html">Execution protocol</a>
+      <a href="commodities.html">Commodities</a>
+      <a href="compare.html">Landscape</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <a class="cta" href="contact.html">Submit a requirement <span>→</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero shell">
+    <p class="eyebrow signal">Talk to the transaction desk</p>
+    <h1>Submit a requirement.</h1>
+    <p>Tell us what you need to buy or sell. The transaction desk will structure your requirement and identify the next diligence and sourcing steps. Please don't send confidential documents through this form. You can also email us at <a href="mailto:info@verraglobal.co" style="text-decoration:underline">info@verraglobal.co</a>.</p>
+  </section>
+
+  <section class="light-section" style="padding-top:0">
+    <div class="shell">
+      <!-- Submissions are emailed to info@verraglobal.co via FormSubmit. The first submission sends an activation email to that inbox; click it once. -->
+      <form class="form" action="https://formsubmit.co/info@verraglobal.co" method="POST">
+        <input type="hidden" name="_subject" value="New ACMX requirement — verra.global">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <fieldset class="full">
+          <legend>Side</legend>
+          <label class="radio"><input type="radio" name="side" value="Buy" required> I want to buy</label>
+          <label class="radio"><input type="radio" name="side" value="Sell"> I want to sell</label>
+        </fieldset>
+        <label>Commodity
+          <input name="commodity" list="commodity-list" required placeholder="e.g. Yttrium oxide">
+          <datalist id="commodity-list">
+            <option value="Gadolinium oxide"><option value="Yttrium oxide"><option value="Dysprosium oxide"><option value="Samarium oxide">
+            <option value="Yttrium metal"><option value="Germanium"><option value="Vanadium pentoxide"><option value="Strontium">
+            <option value="Manganese"><option value="Iron ore"><option value="Thermal coal"><option value="Granular sulphur"><option value="Urea N46">
+          </datalist>
+        </label>
+        <label>Specification / grade
+          <input name="specification" placeholder="e.g. 5N, 99.999% min">
+        </label>
+        <label>Quantity
+          <input name="quantity" required placeholder="e.g. 100 kg / month">
+        </label>
+        <label>Destination
+          <input name="destination" placeholder="Country / port">
+        </label>
+        <label>Delivery window
+          <input name="delivery_window" placeholder="e.g. Q1 2027">
+        </label>
+        <label>Preferred delivery basis
+          <select name="incoterm">
+            <option value="">Not sure</option><option>FOB</option><option>CIF</option><option>CFR</option><option>EXW</option><option>Ex-warehouse</option><option>Other</option>
+          </select>
+        </label>
+        <label class="full">Origin or commercial constraints
+          <textarea name="constraints" placeholder="Origin preferences or restrictions, payment preferences, inspection requirements…"></textarea>
+        </label>
+        <label>Company
+          <input name="company" required autocomplete="organization">
+        </label>
+        <label>Your name
+          <input name="name" required autocomplete="name">
+        </label>
+        <label>Business email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Phone / WhatsApp (optional)
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label class="consent full"><input type="checkbox" name="consent" value="yes" required> I understand that submitting a requirement is not an offer or a binding commitment, and that any transaction is subject to due diligence, compliance checks and definitive agreements.</label>
+        <div class="full"><button class="cta" type="submit">Send requirement <span>→</span></button></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="alt-section">
+    <div class="shell">
+      <div class="grid">
+        <article><span class="eyebrow">What happens next</span><h3>We structure it</h3><p>Your requirement becomes a structured mandate covering specification, quantity, corridor and timing.</p></article>
+        <article><span class="eyebrow">Then</span><h3>We diligence it</h3><p>We identify the evidence and compliance steps needed before any counterparty is introduced.</p></article>
+        <article><span class="eyebrow">Always</span><h3>Under your control</h3><p>Nothing binding happens without your explicit approval and definitive agreements.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="shell">
+  <div class="footer">
+    <div><strong>VERRA GLOBAL F.Z.E</strong><br>Ajman Free Zone, United Arab Emirates<br><a href="mailto:info@verraglobal.co">info@verraglobal.co</a></div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="platform.html">How ACMX works</a><a href="protocol.html">Execution protocol</a><a href="commodities.html">Commodities</a><a href="compare.html">Landscape</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements.</p>
+</footer>
+<script src="assets/site.js?v=5"></script>
+</body>
+</html>

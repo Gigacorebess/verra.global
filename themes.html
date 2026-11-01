@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme Options — Verra Global</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<style>
+  body{margin:0;background:#1a1d21;color:#eef0f2;font-family:"Inter Tight",Arial,sans-serif}
+  header{padding:36px 5% 10px}
+  h1{font-weight:500;font-size:40px;letter-spacing:-1.2px;margin:0 0 8px}
+  header p{color:#a5adb6;margin:0;max-width:720px;line-height:1.55}
+  .options{display:grid;grid-template-columns:repeat(auto-fill,minmax(520px,1fr));gap:28px;padding:28px 5% 60px}
+  .option{background:#23272d;border:1px solid #333a42;border-radius:10px;overflow:hidden}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px}
+  .bar b{font-weight:500;font-size:18px}
+  .bar span{font:12px "IBM Plex Mono",monospace;color:#a5adb6}
+  .swatches{display:flex;gap:4px;margin-top:6px}
+  .swatches i{width:22px;height:12px;border-radius:3px;display:block}
+  .bar a{font:500 13px "Inter Tight",Arial;background:#eef0f2;color:#14171a;padding:9px 13px;border-radius:6px;text-decoration:none;white-space:nowrap}
+  .frame{position:relative;aspect-ratio:1440/1700;overflow:hidden;background:#fff}
+  .frame iframe{position:absolute;top:0;left:0;width:1440px;height:1700px;border:0;transform-origin:0 0;pointer-events:none}
+  @media(max-width:600px){.options{grid-template-columns:1fr;padding:20px 16px}header{padding:24px 16px 0}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Pick a colour theme</h1>
+  <p>Five palettes on the same verra.global home page. Each preview shows the top of the page at desktop size. Use "Open full site" to click through every page in that theme.</p>
+</header>
+<main class="options">
+  <section class="option">
+    <div class="bar"><div><b>1 · Mineral</b><br><span>paper · ink · teal · copper (current)</span><div class="swatches"><i style="background:#f1f0eb"></i><i style="background:#0c1c21"></i><i style="background:#2c8a7e"></i><i style="background:#c2692f"></i></div></div><a href="index.html?theme=mineral" target="_top">Open full site</a></div>
+    <div class="frame"><iframe src="index.html?theme=mineral" title="Mineral theme preview" loading="lazy" tabindex="-1"></iframe></div>
+  </section>
+  <section class="option">
+    <div class="bar"><div><b>2 · Midnight Gold</b><br><span>dark navy · gold · cyan</span><div class="swatches"><i style="background:#0b1220"></i><i style="background:#142036"></i><i style="background:#4cc9f0"></i><i style="background:#f2b544"></i></div></div><a href="index.html?theme=midnight" target="_top">Open full site</a></div>
+    <div class="frame"><iframe src="index.html?theme=midnight" title="Midnight Gold theme preview" loading="lazy" tabindex="-1"></iframe></div>
+  </section>
+  <section class="option">
+    <div class="bar"><div><b>3 · Forest &amp; Ochre</b><br><span>sandstone · deep green · ochre</span><div class="swatches"><i style="background:#f4efe4"></i><i style="background:#15251b"></i><i style="background:#2f6b45"></i><i style="background:#b8871f"></i></div></div><a href="index.html?theme=forest" target="_top">Open full site</a></div>
+    <div class="frame"><iframe src="index.html?theme=forest" title="Forest and Ochre theme preview" loading="lazy" tabindex="-1"></iframe></div>
+  </section>
+  <section class="option">
+    <div class="bar"><div><b>4 · Arctic Cobalt</b><br><span>white · navy · cobalt · aqua</span><div class="swatches"><i style="background:#f6f8fc"></i><i style="background:#0a1433"></i><i style="background:#2747f5"></i><i style="background:#0aa5a5"></i></div></div><a href="index.html?theme=cobalt" target="_top">Open full site</a></div>
+    <div class="frame"><iframe src="index.html?theme=cobalt" title="Arctic Cobalt theme preview" loading="lazy" tabindex="-1"></iframe></div>
+  </section>
+  <section class="option">
+    <div class="bar"><div><b>5 · Plum &amp; Brass</b><br><span>lilac-grey · plum · brass</span><div class="swatches"><i style="background:#f5f2f5"></i><i style="background:#1d1126"></i><i style="background:#6d2e8f"></i><i style="background:#b08a3e"></i></div></div><a href="index.html?theme=plum" target="_top">Open full site</a></div>
+    <div class="frame"><iframe src="index.html?theme=plum" title="Plum and Brass theme preview" loading="lazy" tabindex="-1"></iframe></div>
+  </section>
+</main>
+<script>
+  // Scale each 1440px-wide page down to fit its card.
+  const ro = new ResizeObserver((entries) => {
+    for (const e of entries) e.target.querySelector('iframe').style.transform = `scale(${e.contentRect.width / 1440})`;
+  });
+  document.querySelectorAll('.frame').forEach((f) => ro.observe(f));
+</script>
+</body>
+</html>

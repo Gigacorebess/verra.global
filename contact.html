@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Submit a Requirement — Verra Global</title>
 <meta name="description" content="Submit a buy-side or sell-side commodity requirement to the VCMX transaction desk.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%229%22 y=%229%22 width=%2214%22 height=%2214%22 rx=%222%22 transform=%22rotate(45 16 16)%22 fill=%22%23ad5a23%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -36,7 +37,6 @@
 
   <section class="light-section" style="padding-top:0">
     <div class="shell">
-      <!-- Submissions are emailed to info@verrafze.com via FormSubmit. The first submission sends an activation email to that inbox; click it once. -->
       <form class="form" action="https://formsubmit.co/info@verrafze.com" method="POST">
         <input type="hidden" name="_subject" value="New VCMX requirement — verrafze.com">
         <input type="hidden" name="_template" value="table">
@@ -67,12 +67,12 @@
         </label>
         <label>Specification / grade
           <select name="specification" id="specification" required>
-            <option value="">Select a commodity first</option>
+            <option value="">Select a commodity first</option><option>Other / specify in notes</option>
           </select>
         </label>
         <label>Quantity
           <select name="quantity" id="quantity" required>
-            <option value="">Select a commodity first</option>
+            <option value="">Select a commodity first</option><option>Other / specify in notes</option>
           </select>
         </label>
         <label>Frequency
@@ -132,7 +132,7 @@
   </div>
   <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements.</p>
 </footer>
-<script src="assets/site.js?v=5"></script>
+<script src="assets/site.js?v=6"></script>
 <script>
   // Grade and quantity choices depend on the commodity picked.
   const OTHER = 'Other / specify in notes';
@@ -164,11 +164,15 @@
   const fill = (el, items) => {
     el.replaceChildren(new Option('Select…', ''), ...[...items, OTHER].map((t) => new Option(t)));
   };
-  document.getElementById('commodity').addEventListener('change', (e) => {
-    const [group, grades] = commodities[e.target.value] ?? ['specialty', []];
+  const commodity = document.getElementById('commodity');
+  const update = () => {
+    if (!commodity.value) return;
+    const [group, grades] = commodities[commodity.value] ?? ['specialty', []];
     fill(document.getElementById('specification'), grades);
-    fill(document.getElementById('quantity'), e.target.value === 'Other' ? [] : qty[group]);
-  });
+    fill(document.getElementById('quantity'), commodity.value === 'Other' ? [] : qty[group]);
+  };
+  commodity.addEventListener('change', update);
+  update(); // the browser may restore a chosen commodity on reload
 </script>
 </body>
 </html>

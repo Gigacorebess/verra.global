@@ -1,6 +1,6 @@
 # verra.global
 
-Static marketing site for **ACMX** (Astra Critical Minerals Exchange), operated by VERRA GLOBAL F.Z.E.
+Static marketing site for **VCMX** (Verra Critical Minerals Exchange), operated by VERRA GLOBAL F.Z.E.
 Plain HTML + `assets/site.css` + `assets/site.js`. No build step. Design ported from the BENE LLC site.
 
 Run locally: `python -m http.server 8787` in this folder, then open http://localhost:8787.
@@ -10,7 +10,7 @@ Run locally: `python -m http.server 8787` in this folder, then open http://local
 
 ## Before launch
 - [ ] Contact form posts to FormSubmit, which delivers to info@verraglobal.co. Submit the form once and click the activation email that arrives in that inbox.
-- [ ] Confirm the legal relationship between Verra Global, ACMX, BENE LLC and GigaCore, and the public meaning of "Astra" (it clashes with Astra Rare Earths).
+- [ ] Confirm the legal relationship between Verra Global, VCMX, BENE LLC and GigaCore.
 - [ ] Legal review of the "transaction execution" wording.
 - [ ] Logo/wordmark: "verra" is currently rendered as text.
 - [ ] Privacy policy before the form collects data.

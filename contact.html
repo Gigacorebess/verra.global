@@ -9,19 +9,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=6">
+<link rel="stylesheet" href="assets/site.css?v=7">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="shell nav-inner">
-    <a class="brand" href="index.html" aria-label="Verra Global home">verra<span class="brand-dot"></span><small>VCMX<br>TRANSACTION DESK</small></a>
+    <a class="brand" href="index.html" aria-label="Verra Global home">verra<span class="brand-dot"></span><small>INTERNATIONAL<br>TRADING</small></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">MENU</button>
     <nav class="navlinks" id="navlinks" aria-label="Main">
-      <a href="platform.html">How VCMX works</a>
-      <a href="protocol.html">Execution protocol</a>
+      <a href="platform.html">VCMX desk</a>
+      <a href="protocol.html">Protocol</a>
       <a href="commodities.html">Commodities</a>
-      <a href="compare.html">Landscape</a>
+      <a href="textiles.html">Textiles &amp; Apparel</a>
+      <a href="about.html">About</a>
       <a href="contact.html" aria-current="page">Contact</a>
     </nav>
     <a class="cta" href="contact.html">Submit a requirement <span>→</span></a>
@@ -46,9 +47,9 @@
           <label class="radio"><input type="radio" name="side" value="Buy" required> I want to buy</label>
           <label class="radio"><input type="radio" name="side" value="Sell"> I want to sell</label>
         </fieldset>
-        <label>Commodity
+        <label>Product or commodity
           <select name="commodity" id="commodity" required>
-            <option value="">Select a commodity</option>
+            <option value="">Select a product</option>
             <optgroup label="Critical minerals &amp; rare earths">
               <option>Gadolinium oxide</option><option>Yttrium oxide</option><option>Dysprosium oxide</option><option>Samarium oxide</option><option>Yttrium metal</option><option>Germanium metal</option><option>Vanadium pentoxide</option><option>Strontium</option>
             </optgroup>
@@ -59,10 +60,13 @@
               <option>LPG</option><option>EN590 diesel</option><option>Jet A-1</option><option>LNG</option><option>Bitumen</option>
             </optgroup>
             <optgroup label="Industrial &amp; fertilizers">
-              <option>Sulphur</option><option>Urea</option><option>Methanol</option>
+              <option>Sulphur</option><option>Urea</option><option>Paints &amp; coatings</option><option>Methanol</option>
             </optgroup>
             <optgroup label="Metals">
               <option>Aluminium ingot</option><option>Aluminium scrap</option><option>SHG zinc ingot</option><option>Copper wire scrap</option><option>Stainless steel scrap</option>
+            </optgroup>
+            <optgroup label="Textiles, fabrics &amp; apparel">
+              <option>Finished garments</option><option>Woven fabrics</option><option>Knitted fabrics</option><option>Textile &amp; fashion products</option><option>Private-label manufacturing</option>
             </optgroup>
             <option>Other</option>
           </select>
@@ -129,12 +133,12 @@
   <div class="footer">
     <div><strong>VERRA GLOBAL F.Z.E</strong><br>Ajman Free Zone, United Arab Emirates<br><a href="mailto:info@verrafze.com">info@verrafze.com</a></div>
     <nav class="footer-nav" aria-label="Footer">
-      <a href="platform.html">How VCMX works</a><a href="protocol.html">Execution protocol</a><a href="commodities.html">Commodities</a><a href="compare.html">Landscape</a><a href="contact.html">Contact</a>
+      <a href="platform.html">VCMX desk</a><a href="protocol.html">Protocol</a><a href="commodities.html">Commodities</a><a href="textiles.html">Textiles &amp; Apparel</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     </nav>
   </div>
-  <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements. VCMX is a transaction-coordination service; it is not a regulated exchange, bank, broker-dealer or escrow provider, and does not hold client funds. <a href="privacy.html" style="text-decoration:underline">Privacy notice</a>.</p>
+  <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements. Verra Global F.Z.E is an international trading company. VCMX is its transaction desk methodology; it is not a regulated exchange, bank, broker-dealer or escrow provider. <a href="privacy.html" style="text-decoration:underline">Privacy notice</a>.</p>
 </footer>
-<script src="assets/site.js?v=6"></script>
+<script src="assets/site.js?v=7"></script>
 <script>
   // Grade and quantity choices depend on the commodity picked.
   const OTHER = 'Other / specify in notes';
@@ -475,6 +479,7 @@
       ]
     }
   };
+  Object.assign(commodities, {"Finished garments": {"grades": ["Menswear", "Womenswear", "Kidswear", "Workwear & uniforms", "Activewear"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000–49,999 pcs", "50,000 pcs+"]}, "Woven fabrics": {"grades": ["Cotton", "Polyester", "Poly-cotton blend", "Viscose / rayon", "Linen", "Denim"], "quantities": ["Under 5,000 m", "5,000–19,999 m", "20,000–49,999 m", "50,000–99,999 m", "100,000 m+"]}, "Knitted fabrics": {"grades": ["Single jersey", "Interlock", "Rib", "Fleece", "Piqué"], "quantities": ["Under 1,000 kg", "1,000–4,999 kg", "5,000–19,999 kg", "20,000 kg+"]}, "Textile & fashion products": {"grades": ["Home textiles", "Fashion accessories", "Other textile products"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000 pcs+"]}, "Private-label manufacturing": {"grades": ["Garment development & production", "Fabric development"], "quantities": ["Under 1,000 pcs per style", "1,000–4,999 pcs per style", "5,000 pcs+ per style"]}, "Paints & coatings": {"grades": ["Decorative paints", "Industrial coatings", "Primers & sealants"], "quantities": ["Under 1,000 L", "1,000–9,999 L", "10,000–49,999 L", "50,000 L+"]}});
   const fill = (el, items) => {
     el.replaceChildren(new Option('Select…', ''), ...[...items, OTHER].map((t) => new Option(t)));
   };

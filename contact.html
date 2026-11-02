@@ -50,17 +50,19 @@
           <select name="commodity" id="commodity" required>
             <option value="">Select a commodity</option>
             <optgroup label="Critical minerals &amp; rare earths">
-              <option>Gadolinium oxide</option><option>Yttrium oxide</option><option>Dysprosium oxide</option><option>Samarium oxide</option>
-              <option>Yttrium metal</option><option>Germanium</option><option>Vanadium pentoxide</option><option>Strontium</option>
+              <option>Gadolinium oxide</option><option>Yttrium oxide</option><option>Dysprosium oxide</option><option>Samarium oxide</option><option>Yttrium metal</option><option>Germanium metal</option><option>Vanadium pentoxide</option><option>Strontium</option>
             </optgroup>
             <optgroup label="Ores &amp; coal">
-              <option>Manganese ore</option><option>Iron ore</option><option>Thermal coal</option>
+              <option>Thermal coal</option><option>Iron ore</option><option>Manganese</option><option>Rock phosphate</option><option>Raw mica</option>
             </optgroup>
-            <optgroup label="Energy">
-              <option>LPG</option><option>Crude oil</option>
+            <optgroup label="Energy &amp; petroleum products">
+              <option>LPG</option><option>EN590 diesel</option><option>Jet A-1</option><option>LNG</option><option>Bitumen</option>
             </optgroup>
-            <optgroup label="Industrial &amp; other">
-              <option>Granular sulphur</option><option>Urea N46</option><option>Precious metals</option>
+            <optgroup label="Industrial &amp; fertilizers">
+              <option>Sulphur</option><option>Urea</option><option>Methanol</option>
+            </optgroup>
+            <optgroup label="Metals">
+              <option>Aluminium ingot</option><option>Aluminium scrap</option><option>SHG zinc ingot</option><option>Copper wire scrap</option><option>Stainless steel scrap</option>
             </optgroup>
             <option>Other</option>
           </select>
@@ -136,30 +138,342 @@
 <script>
   // Grade and quantity choices depend on the commodity picked.
   const OTHER = 'Other / specify in notes';
-  const qty = {
-    specialty: ['1–10 kg', '10–100 kg', '100–500 kg', '500 kg–1 MT', '1–5 MT', '5–10 MT', '10 MT+'],
-    bulk: ['Under 5,000 MT', '5,000–10,000 MT', '10,000–25,000 MT', '25,000–50,000 MT', '50,000–100,000 MT', '100,000 MT+'],
-    lpg: ['Under 1,000 MT', '1,000–5,000 MT', '5,000–20,000 MT', '20,000–45,000 MT', '45,000 MT+'],
-    crude: ['Under 500,000 bbl', '500,000–1,000,000 bbl', '1–2 million bbl', '2 million bbl+'],
-    precious: ['Under 10 kg', '10–50 kg', '50–200 kg', '200 kg+'],
-  };
   const commodities = {
-    'Gadolinium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)', '5N (99.999%)']],
-    'Yttrium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)', '5N (99.999%)']],
-    'Dysprosium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)']],
-    'Samarium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)']],
-    'Yttrium metal': ['specialty', ['99.5%', '3N (99.9%)']],
-    Germanium: ['specialty', ['5N ingot', '5N granules', '5N powder']],
-    'Vanadium pentoxide': ['specialty', ['98% flake', '99.5% powder']],
-    Strontium: ['specialty', ['Strontium metal 99%', 'Strontium carbonate 97–99%']],
-    'Manganese ore': ['bulk', ['Mn 30–35%', 'Mn 36–40%', 'Mn 42–44%', 'Mn 44%+']],
-    'Iron ore': ['bulk', ['Fines Fe 58–60%', 'Fines Fe 62%', 'Fines Fe 63.5–65%', 'Lump Fe 62–65%', 'Pellets Fe 65%+']],
-    'Thermal coal': ['bulk', ['GAR 3,800 kcal/kg', 'GAR 4,200 kcal/kg', 'GAR 5,000 kcal/kg', 'GAR 5,500 kcal/kg', 'GAR 6,000 kcal/kg']],
-    LPG: ['lpg', ['Propane', 'Butane', 'Propane/butane mix']],
-    'Crude oil': ['crude', ['Light sweet (API 35+)', 'Medium (API 25–35)', 'Heavy (API under 25)']],
-    'Granular sulphur': ['bulk', ['Granular 99.5% min', 'Lump 99.5% min']],
-    'Urea N46': ['bulk', ['Granular N46', 'Prilled N46']],
-    'Precious metals': ['precious', ['Gold bullion 999.9', 'Gold doré']],
+    "Gadolinium oxide": {
+      "grades": [
+        "Gd₂O₃ 4N (99.99%)"
+      ],
+      "quantities": [
+        "Under 250 kg",
+        "250–499 kg",
+        "500–999 kg",
+        "1,000–2,499 kg",
+        "2,500–5,000 kg",
+        "Over 5,000 kg"
+      ]
+    },
+    "Yttrium oxide": {
+      "grades": [
+        "Y₂O₃ 5N (99.999%)",
+        "Lot-specific Y/Al oxide powder"
+      ],
+      "quantities": [
+        "Under 100 kg",
+        "100–299 kg",
+        "300–499 kg",
+        "500–999 kg",
+        "1,000–4,999 kg",
+        "5,000 kg+"
+      ]
+    },
+    "Dysprosium oxide": {
+      "grades": [
+        "Dy₂O₃ 4N (99.99%)"
+      ],
+      "quantities": [
+        "Under 100 kg",
+        "100–199 kg",
+        "200–499 kg",
+        "500–999 kg",
+        "1,000–2,000 kg",
+        "Over 2,000 kg"
+      ]
+    },
+    "Samarium oxide": {
+      "grades": [
+        "Sm₂O₃ 3N (99.9%)",
+        "Sm₂O₃ 4N (99.99%)"
+      ],
+      "quantities": [
+        "Specify quantity (kg) in notes"
+      ]
+    },
+    "Yttrium metal": {
+      "grades": [
+        "Y 3N (99.9%)"
+      ],
+      "quantities": [
+        "Under 500 kg",
+        "500–999 kg",
+        "1,000–2,499 kg",
+        "2,500–4,999 kg",
+        "5,000–9,999 kg",
+        "10,000 kg+"
+      ]
+    },
+    "Germanium metal": {
+      "grades": [
+        "Ge 5N (99.999%) granules",
+        "Ge 5N (99.999%) ingots",
+        "Ge 5N (99.999%) powder"
+      ],
+      "quantities": [
+        "Under 10 kg",
+        "10–24 kg",
+        "25–49 kg",
+        "50–99 kg",
+        "100–249 kg",
+        "250 kg+"
+      ]
+    },
+    "Vanadium pentoxide": {
+      "grades": [
+        "V₂O₅ 98% minimum",
+        "V₂O₅ 98–99.5%"
+      ],
+      "quantities": [
+        "Under 5 MT",
+        "5–9 MT",
+        "10–15 MT",
+        "16–25 MT",
+        "26–50 MT",
+        "Over 50 MT"
+      ]
+    },
+    "Strontium": {
+      "grades": [
+        "Strontium metal 99%",
+        "Strontium carbonate (SrCO₃) 99%"
+      ],
+      "quantities": [
+        "Specify quantity (kg) in notes"
+      ]
+    },
+    "Thermal coal": {
+      "grades": [
+        "NCV 5,500 (ARB) class",
+        "Low-sulphur, GCV 6,500–7,000 class",
+        "GCV 5,500–6,500, sulphur up to ~2%"
+      ],
+      "quantities": [
+        "Under 30,000 MT",
+        "30,000–39,999 MT",
+        "40,000–49,999 MT",
+        "50,000–59,999 MT",
+        "60,000 MT+",
+        "Long-term monthly programme"
+      ]
+    },
+    "Iron ore": {
+      "grades": [
+        "Fe 60%+",
+        "Fe 62%+",
+        "Nominal Fe 64–65%",
+        "Lump/fines 0–50 mm",
+        "Fines 0–15 mm"
+      ],
+      "quantities": [
+        "Under 25,000 MT",
+        "25,000–49,999 MT",
+        "50,000 MT",
+        "50,001–59,999 MT",
+        "60,000 MT",
+        "Over 60,000 MT"
+      ]
+    },
+    "Manganese": {
+      "grades": [
+        "High-grade manganese ore",
+        "Manganese oxide",
+        "Manganese dioxide",
+        "Manganese ferroalloys"
+      ],
+      "quantities": [
+        "Specify quantity (MT) in notes"
+      ]
+    },
+    "Rock phosphate": {
+      "grades": [
+        "P₂O₅ 30% minimum",
+        "BPL 64–66%",
+        "P₂O₅ 29.3–30.2%"
+      ],
+      "quantities": [
+        "Under 25,000 MT",
+        "25,000–39,999 MT",
+        "40,000–49,999 MT",
+        "50,000 MT",
+        "Over 50,000 MT",
+        "Monthly programme"
+      ]
+    },
+    "Raw mica": {
+      "grades": [
+        "Muscovite",
+        "Phlogopite",
+        "Other raw mica grade"
+      ],
+      "quantities": [
+        "Specify quantity (MT) in notes"
+      ]
+    },
+    "LPG": {
+      "grades": [
+        "Commercial LPG, 35:65 propane/butane",
+        "Custom C3/C4 blend"
+      ],
+      "quantities": [
+        "Under 5,000 MT",
+        "5,000–9,999 MT",
+        "10,000 MT",
+        "10,001–20,000 MT",
+        "Over 20,000 MT",
+        "Recurring programme"
+      ]
+    },
+    "EN590 diesel": {
+      "grades": [
+        "EN590 10 ppm"
+      ],
+      "quantities": [
+        "Under 25,000 MT",
+        "25,000–49,999 MT",
+        "50,000–74,999 MT",
+        "75,000–99,999 MT",
+        "100,000 MT",
+        "100,000 MT+ programme"
+      ]
+    },
+    "Jet A-1": {
+      "grades": [
+        "Jet A-1"
+      ],
+      "quantities": [
+        "Specify quantity (MT) in notes"
+      ]
+    },
+    "LNG": {
+      "grades": [
+        "LNG"
+      ],
+      "quantities": [
+        "Specify quantity (MT) in notes"
+      ]
+    },
+    "Bitumen": {
+      "grades": [
+        "C170",
+        "Solid bitumen / asphalt",
+        "Liquid asphalt sealant"
+      ],
+      "quantities": [
+        "Under 20 MT",
+        "20–49 MT",
+        "50–99 MT",
+        "100–499 MT",
+        "500–999 MT",
+        "1,000 MT+"
+      ]
+    },
+    "Sulphur": {
+      "grades": [
+        "Granular ≥99.5%",
+        "Granular ≥99.7%",
+        "Granular ≥99.8%",
+        "Granular ≥99.9%",
+        "Granular / prilled ≥99.95%",
+        "High-purity ≥99.98%",
+        "Lump / crushed ≥99.8%"
+      ],
+      "quantities": [
+        "Under 5,000 MT",
+        "5,000–24,999 MT",
+        "25,000–29,999 MT",
+        "30,000–49,999 MT",
+        "50,000 MT",
+        "Over 50,000 MT",
+        "Monthly / annual contract"
+      ]
+    },
+    "Urea": {
+      "grades": [
+        "Prilled urea N46, agriculture grade",
+        "Granular urea N46"
+      ],
+      "quantities": [
+        "Under 10,000 MT",
+        "10,000–24,999 MT",
+        "25,000–49,999 MT",
+        "50,000–99,999 MT",
+        "100,000 MT",
+        "Monthly programme"
+      ]
+    },
+    "Methanol": {
+      "grades": [
+        "Long-term offtake / project enquiry"
+      ],
+      "quantities": [
+        "Specify quantity (MT) in notes"
+      ]
+    },
+    "Aluminium ingot": {
+      "grades": [
+        "A7 ≥99.7%",
+        "AK5M2"
+      ],
+      "quantities": [
+        "Under 25 MT",
+        "25–99 MT",
+        "100–249 MT",
+        "250–499 MT",
+        "500 MT",
+        "500 MT+ monthly"
+      ]
+    },
+    "Aluminium scrap": {
+      "grades": [
+        "Wheel scrap",
+        "6062 profile scrap",
+        "6063 profile scrap",
+        "Aluminium wire scrap",
+        "Zorba",
+        "UBC",
+        "ISRI Tense",
+        "TT hammered / shredded"
+      ],
+      "quantities": [
+        "1 container",
+        "2–4 containers",
+        "5–9 containers",
+        "10–19 containers",
+        "20+ containers"
+      ]
+    },
+    "SHG zinc ingot": {
+      "grades": [
+        "SHG zinc 99.995% minimum"
+      ],
+      "quantities": [
+        "1 container",
+        "2–4 containers",
+        "5–9 containers",
+        "10+ containers"
+      ]
+    },
+    "Copper wire scrap": {
+      "grades": [
+        "Copper wire scrap, 0.5–1% impurities"
+      ],
+      "quantities": [
+        "1 container",
+        "2 containers",
+        "3–5 containers",
+        "6–10 containers",
+        "10+ containers"
+      ]
+    },
+    "Stainless steel scrap": {
+      "grades": [
+        "SS304"
+      ],
+      "quantities": [
+        "1 FCL",
+        "2–4 FCL",
+        "5–9 FCL",
+        "10+ FCL"
+      ]
+    }
   };
   const fill = (el, items) => {
     el.replaceChildren(new Option('Select…', ''), ...[...items, OTHER].map((t) => new Option(t)));
@@ -167,9 +481,9 @@
   const commodity = document.getElementById('commodity');
   const update = () => {
     if (!commodity.value) return;
-    const [group, grades] = commodities[commodity.value] ?? ['specialty', []];
-    fill(document.getElementById('specification'), grades);
-    fill(document.getElementById('quantity'), commodity.value === 'Other' ? [] : qty[group]);
+    const c = commodities[commodity.value] ?? { grades: [], quantities: [] };
+    fill(document.getElementById('specification'), c.grades);
+    fill(document.getElementById('quantity'), c.quantities);
   };
   commodity.addEventListener('change', update);
   update(); // the browser may restore a chosen commodity on reload

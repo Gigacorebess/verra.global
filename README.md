@@ -9,7 +9,7 @@ Run locally: `python -m http.server 8787` in this folder, then open http://local
 `index` · `platform` (skills, deal state, approvals) · `protocol` (7 stages) · `commodities` · `compare` (21 platforms) · `contact` (requirement form)
 
 ## Before launch
-- [ ] Contact form posts to FormSubmit, which delivers to info@verraglobal.co. Submit the form once and click the activation email that arrives in that inbox.
+- [ ] Contact form posts to FormSubmit, which delivers to info@verrafze.com. Submit the form once and click the activation email that arrives in that inbox.
 - [ ] Confirm the legal relationship between Verra Global, VCMX, BENE LLC and GigaCore.
 - [ ] Legal review of the "transaction execution" wording.
 - [ ] Logo/wordmark: "verra" is currently rendered as text.

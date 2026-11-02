@@ -31,14 +31,14 @@
   <section class="page-hero shell">
     <p class="eyebrow signal">Talk to the transaction desk</p>
     <h1>Submit a requirement.</h1>
-    <p>Tell us what you need to buy or sell. The transaction desk will structure your requirement and identify the next diligence and sourcing steps. Please don't send confidential documents through this form. You can also email us at <a href="mailto:info@verraglobal.co" style="text-decoration:underline">info@verraglobal.co</a>.</p>
+    <p>Tell us what you need to buy or sell. The transaction desk will structure your requirement and identify the next diligence and sourcing steps. Please don't send confidential documents through this form. You can also email us at <a href="mailto:info@verrafze.com" style="text-decoration:underline">info@verrafze.com</a>.</p>
   </section>
 
   <section class="light-section" style="padding-top:0">
     <div class="shell">
-      <!-- Submissions are emailed to info@verraglobal.co via FormSubmit. The first submission sends an activation email to that inbox; click it once. -->
-      <form class="form" action="https://formsubmit.co/info@verraglobal.co" method="POST">
-        <input type="hidden" name="_subject" value="New VCMX requirement — verra.global">
+      <!-- Submissions are emailed to info@verrafze.com via FormSubmit. The first submission sends an activation email to that inbox; click it once. -->
+      <form class="form" action="https://formsubmit.co/info@verrafze.com" method="POST">
+        <input type="hidden" name="_subject" value="New VCMX requirement — verrafze.com">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <fieldset class="full">
@@ -47,18 +47,38 @@
           <label class="radio"><input type="radio" name="side" value="Sell"> I want to sell</label>
         </fieldset>
         <label>Commodity
-          <input name="commodity" list="commodity-list" required placeholder="e.g. Yttrium oxide">
-          <datalist id="commodity-list">
-            <option value="Gadolinium oxide"><option value="Yttrium oxide"><option value="Dysprosium oxide"><option value="Samarium oxide">
-            <option value="Yttrium metal"><option value="Germanium"><option value="Vanadium pentoxide"><option value="Strontium">
-            <option value="Manganese"><option value="Iron ore"><option value="Thermal coal"><option value="Granular sulphur"><option value="Urea N46">
-          </datalist>
+          <select name="commodity" id="commodity" required>
+            <option value="">Select a commodity</option>
+            <optgroup label="Critical minerals &amp; rare earths">
+              <option>Gadolinium oxide</option><option>Yttrium oxide</option><option>Dysprosium oxide</option><option>Samarium oxide</option>
+              <option>Yttrium metal</option><option>Germanium</option><option>Vanadium pentoxide</option><option>Strontium</option>
+            </optgroup>
+            <optgroup label="Ores &amp; coal">
+              <option>Manganese ore</option><option>Iron ore</option><option>Thermal coal</option>
+            </optgroup>
+            <optgroup label="Energy">
+              <option>LPG</option><option>Crude oil</option>
+            </optgroup>
+            <optgroup label="Industrial &amp; other">
+              <option>Granular sulphur</option><option>Urea N46</option><option>Precious metals</option>
+            </optgroup>
+            <option>Other</option>
+          </select>
         </label>
         <label>Specification / grade
-          <input name="specification" placeholder="e.g. 5N, 99.999% min">
+          <select name="specification" id="specification" required>
+            <option value="">Select a commodity first</option>
+          </select>
         </label>
         <label>Quantity
-          <input name="quantity" required placeholder="e.g. 100 kg / month">
+          <select name="quantity" id="quantity" required>
+            <option value="">Select a commodity first</option>
+          </select>
+        </label>
+        <label>Frequency
+          <select name="frequency">
+            <option>One-time</option><option>Monthly</option><option>Quarterly</option><option>Annual contract</option>
+          </select>
         </label>
         <label>Destination
           <input name="destination" placeholder="Country / port">
@@ -105,7 +125,7 @@
 
 <footer class="shell">
   <div class="footer">
-    <div><strong>VERRA GLOBAL F.Z.E</strong><br>Ajman Free Zone, United Arab Emirates<br><a href="mailto:info@verraglobal.co">info@verraglobal.co</a></div>
+    <div><strong>VERRA GLOBAL F.Z.E</strong><br>Ajman Free Zone, United Arab Emirates<br><a href="mailto:info@verrafze.com">info@verrafze.com</a></div>
     <nav class="footer-nav" aria-label="Footer">
       <a href="platform.html">How VCMX works</a><a href="protocol.html">Execution protocol</a><a href="commodities.html">Commodities</a><a href="compare.html">Landscape</a><a href="contact.html">Contact</a>
     </nav>
@@ -113,5 +133,42 @@
   <p class="legal">Information on this site is for general business purposes and does not constitute an offer, guarantee of supply, investment advice, legal advice or a binding commitment. Transactions are subject to due diligence, applicable compliance requirements and definitive agreements.</p>
 </footer>
 <script src="assets/site.js?v=5"></script>
+<script>
+  // Grade and quantity choices depend on the commodity picked.
+  const OTHER = 'Other / specify in notes';
+  const qty = {
+    specialty: ['1–10 kg', '10–100 kg', '100–500 kg', '500 kg–1 MT', '1–5 MT', '5–10 MT', '10 MT+'],
+    bulk: ['Under 5,000 MT', '5,000–10,000 MT', '10,000–25,000 MT', '25,000–50,000 MT', '50,000–100,000 MT', '100,000 MT+'],
+    lpg: ['Under 1,000 MT', '1,000–5,000 MT', '5,000–20,000 MT', '20,000–45,000 MT', '45,000 MT+'],
+    crude: ['Under 500,000 bbl', '500,000–1,000,000 bbl', '1–2 million bbl', '2 million bbl+'],
+    precious: ['Under 10 kg', '10–50 kg', '50–200 kg', '200 kg+'],
+  };
+  const commodities = {
+    'Gadolinium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)', '5N (99.999%)']],
+    'Yttrium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)', '5N (99.999%)']],
+    'Dysprosium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)']],
+    'Samarium oxide': ['specialty', ['3N (99.9%)', '4N (99.99%)']],
+    'Yttrium metal': ['specialty', ['99.5%', '3N (99.9%)']],
+    Germanium: ['specialty', ['5N ingot', '5N granules', '5N powder']],
+    'Vanadium pentoxide': ['specialty', ['98% flake', '99.5% powder']],
+    Strontium: ['specialty', ['Strontium metal 99%', 'Strontium carbonate 97–99%']],
+    'Manganese ore': ['bulk', ['Mn 30–35%', 'Mn 36–40%', 'Mn 42–44%', 'Mn 44%+']],
+    'Iron ore': ['bulk', ['Fines Fe 58–60%', 'Fines Fe 62%', 'Fines Fe 63.5–65%', 'Lump Fe 62–65%', 'Pellets Fe 65%+']],
+    'Thermal coal': ['bulk', ['GAR 3,800 kcal/kg', 'GAR 4,200 kcal/kg', 'GAR 5,000 kcal/kg', 'GAR 5,500 kcal/kg', 'GAR 6,000 kcal/kg']],
+    LPG: ['lpg', ['Propane', 'Butane', 'Propane/butane mix']],
+    'Crude oil': ['crude', ['Light sweet (API 35+)', 'Medium (API 25–35)', 'Heavy (API under 25)']],
+    'Granular sulphur': ['bulk', ['Granular 99.5% min', 'Lump 99.5% min']],
+    'Urea N46': ['bulk', ['Granular N46', 'Prilled N46']],
+    'Precious metals': ['precious', ['Gold bullion 999.9', 'Gold doré']],
+  };
+  const fill = (el, items) => {
+    el.replaceChildren(new Option('Select…', ''), ...[...items, OTHER].map((t) => new Option(t)));
+  };
+  document.getElementById('commodity').addEventListener('change', (e) => {
+    const [group, grades] = commodities[e.target.value] ?? ['specialty', []];
+    fill(document.getElementById('specification'), grades);
+    fill(document.getElementById('quantity'), e.target.value === 'Other' ? [] : qty[group]);
+  });
+</script>
 </body>
 </html>

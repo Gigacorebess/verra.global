@@ -56,14 +56,11 @@
             <optgroup label="Ores &amp; coal">
               <option>Thermal coal</option><option>Iron ore</option><option>Manganese</option><option>Rock phosphate</option><option>Raw mica</option>
             </optgroup>
-            <optgroup label="Energy &amp; petroleum products">
-              <option>LPG</option><option>EN590 diesel</option><option>Jet A-1</option><option>LNG</option><option>Bitumen</option>
-            </optgroup>
             <optgroup label="Industrial &amp; fertilizers">
-              <option>Sulphur</option><option>Urea</option><option>Paints &amp; coatings</option><option>Methanol</option>
+              <option>Sulphur</option><option>Urea</option><option>Methanol</option>
             </optgroup>
             <optgroup label="Metals">
-              <option>Aluminium ingot</option><option>Aluminium scrap</option><option>SHG zinc ingot</option><option>Copper wire scrap</option><option>Stainless steel scrap</option>
+              <option>Aluminium ingot</option><option>Aluminium scrap</option><option>SHG zinc ingot</option><option>Copper wire scrap</option>
             </optgroup>
             <optgroup label="Textiles, fabrics &amp; apparel">
               <option>Finished garments</option><option>Woven fabrics</option><option>Knitted fabrics</option><option>Textile &amp; fashion products</option><option>Private-label manufacturing</option>
@@ -331,64 +328,6 @@
         "Specify quantity (MT) in notes"
       ]
     },
-    "LPG": {
-      "grades": [
-        "Commercial LPG, 35:65 propane/butane",
-        "Custom C3/C4 blend"
-      ],
-      "quantities": [
-        "Under 5,000 MT",
-        "5,000–9,999 MT",
-        "10,000 MT",
-        "10,001–20,000 MT",
-        "Over 20,000 MT",
-        "Recurring programme"
-      ]
-    },
-    "EN590 diesel": {
-      "grades": [
-        "EN590 10 ppm"
-      ],
-      "quantities": [
-        "Under 25,000 MT",
-        "25,000–49,999 MT",
-        "50,000–74,999 MT",
-        "75,000–99,999 MT",
-        "100,000 MT",
-        "100,000 MT+ programme"
-      ]
-    },
-    "Jet A-1": {
-      "grades": [
-        "Jet A-1"
-      ],
-      "quantities": [
-        "Specify quantity (MT) in notes"
-      ]
-    },
-    "LNG": {
-      "grades": [
-        "LNG"
-      ],
-      "quantities": [
-        "Specify quantity (MT) in notes"
-      ]
-    },
-    "Bitumen": {
-      "grades": [
-        "C170",
-        "Solid bitumen / asphalt",
-        "Liquid asphalt sealant"
-      ],
-      "quantities": [
-        "Under 20 MT",
-        "20–49 MT",
-        "50–99 MT",
-        "100–499 MT",
-        "500–999 MT",
-        "1,000 MT+"
-      ]
-    },
     "Sulphur": {
       "grades": [
         "Granular ≥99.5%",
@@ -486,20 +425,9 @@
         "6–10 containers",
         "10+ containers"
       ]
-    },
-    "Stainless steel scrap": {
-      "grades": [
-        "SS304"
-      ],
-      "quantities": [
-        "1 FCL",
-        "2–4 FCL",
-        "5–9 FCL",
-        "10+ FCL"
-      ]
     }
   };
-  Object.assign(commodities, {"Finished garments": {"grades": ["Menswear", "Womenswear", "Kidswear", "Workwear & uniforms", "Activewear"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000–49,999 pcs", "50,000 pcs+"]}, "Woven fabrics": {"grades": ["Cotton", "Polyester", "Poly-cotton blend", "Viscose / rayon", "Linen", "Denim"], "quantities": ["Under 5,000 m", "5,000–19,999 m", "20,000–49,999 m", "50,000–99,999 m", "100,000 m+"]}, "Knitted fabrics": {"grades": ["Single jersey", "Interlock", "Rib", "Fleece", "Piqué"], "quantities": ["Under 1,000 kg", "1,000–4,999 kg", "5,000–19,999 kg", "20,000 kg+"]}, "Textile & fashion products": {"grades": ["Home textiles", "Fashion accessories", "Other textile products"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000 pcs+"]}, "Private-label manufacturing": {"grades": ["Garment development & production", "Fabric development"], "quantities": ["Under 1,000 pcs per style", "1,000–4,999 pcs per style", "5,000 pcs+ per style"]}, "Paints & coatings": {"grades": ["Decorative paints", "Industrial coatings", "Primers & sealants"], "quantities": ["Under 1,000 L", "1,000–9,999 L", "10,000–49,999 L", "50,000 L+"]}});
+  Object.assign(commodities, {"Finished garments": {"grades": ["Menswear", "Womenswear", "Kidswear", "Workwear & uniforms", "Activewear"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000–49,999 pcs", "50,000 pcs+"]}, "Woven fabrics": {"grades": ["Cotton", "Polyester", "Poly-cotton blend", "Viscose / rayon", "Linen", "Denim"], "quantities": ["Under 5,000 m", "5,000–19,999 m", "20,000–49,999 m", "50,000–99,999 m", "100,000 m+"]}, "Knitted fabrics": {"grades": ["Single jersey", "Interlock", "Rib", "Fleece", "Piqué"], "quantities": ["Under 1,000 kg", "1,000–4,999 kg", "5,000–19,999 kg", "20,000 kg+"]}, "Textile & fashion products": {"grades": ["Home textiles", "Fashion accessories", "Other textile products"], "quantities": ["Under 1,000 pcs", "1,000–4,999 pcs", "5,000–19,999 pcs", "20,000 pcs+"]}, "Private-label manufacturing": {"grades": ["Garment development & production", "Fabric development"], "quantities": ["Under 1,000 pcs per style", "1,000–4,999 pcs per style", "5,000 pcs+ per style"]}});
   const fill = (el, items) => {
     el.replaceChildren(new Option('Select…', ''), ...[...items, OTHER].map((t) => new Option(t)));
   };
